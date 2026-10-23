@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estudio Brújula: asesoría contable personal y formulario para solicitar una primera consulta.">
+  <meta name="theme-color" content="#f2f6f2">
+  <title>Estudio Brújula | Finanzas con perspectiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{--forest:#173b36;--mint:#dcebe2;--lime:#c4e271;--cream:#f2f6f2;--text:#203b37;--sub:#71817a;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--cream);color:var(--text);font-family:"DM Sans",sans-serif}
+    h1,h2,h3,.logo{font-family:Manrope,sans-serif;letter-spacing:-.045em}
+    .topline{height:7px;background:linear-gradient(90deg,var(--lime) 0 25%,var(--forest) 25% 100%)}
+    .navbar{min-height:78px}
+    .logo{font-size:1.14rem;font-weight:800;color:var(--forest);text-decoration:none}
+    .logo span{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:13px 13px 13px 3px;background:var(--forest);color:var(--lime);margin-right:9px}
+    .nav-link{color:#55716a!important;font-weight:600;font-size:.91rem}
+    .btn-pill{border:0;border-radius:99px;padding:12px 20px;background:var(--lime);color:var(--forest);font-weight:700}
+    .btn-pill:hover{background:#b1d45b;color:var(--forest)}
+    .hero{padding:62px 0 70px}
+    .hero-panel{position:relative;min-height:540px;border-radius:28px;overflow:hidden;background:var(--forest);color:white}
+    .hero-panel:before{content:"";position:absolute;width:460px;height:460px;border:1px solid #ffffff26;border-radius:50%;right:-120px;top:-120px;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff05}
+    .hero-copy{position:relative;z-index:1;padding:72px 6.5%}
+    .kicker{color:var(--lime);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+    h1{font-size:clamp(3rem,5.9vw,5.1rem);line-height:1.01;font-weight:700;max-width:660px;margin:22px 0}
+    .hero-copy p{max-width:540px;color:#d0dfd9;line-height:1.75;font-size:1.05rem}
+    .hero-buttons{display:flex;align-items:center;gap:22px;margin-top:27px}
+    .hero-link{color:white;font-weight:700;text-decoration:none;border-bottom:1px solid #ffffff66;padding-bottom:4px}
+    .portrait{position:absolute;bottom:0;right:4%;width:34%;height:79%;overflow:hidden;border-radius:48% 48% 0 0;background:#b4c8b9}
+    .portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .portrait-label{position:absolute;bottom:25px;left:7%;z-index:2;background:white;color:var(--forest);padding:14px 17px;border-radius:13px;font-size:.82rem;font-weight:700;box-shadow:0 10px 30px #0a211e30}
+    .hero-meta{display:flex;gap:24px;margin-top:44px;color:#c5d6cf;font-size:.83rem}
+    .hero-meta b{color:var(--lime);font-size:1.1rem;margin-right:6px}
+    .section{padding:75px 0}
+    .section-kicker{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#7b9d82}
+    .section-title{font-size:clamp(2.35rem,4.4vw,3.6rem);font-weight:700;line-height:1.08;margin:15px 0}
+    .muted{color:var(--sub);line-height:1.75}
+    .values{padding-top:22px}
+    .value{border-top:1px solid #cad9cf;padding:22px 0}
+    .value-num{color:#7b9d82;font-size:.83rem;font-weight:700;letter-spacing:.08em}
+    .value h3{font-size:1.14rem;font-weight:700;margin:8px 0}
+    .value p{max-width:360px;margin:0;color:var(--sub);font-size:.93rem;line-height:1.65}
+    .contact{background:var(--mint);padding:82px 0}
+    .contact-card{background:#fff;border-radius:24px;padding:clamp(25px,5vw,54px);box-shadow:0 24px 70px #153c3210}
+    .contact-card h2{font-size:clamp(2.2rem,4.5vw,3.45rem);font-weight:700;line-height:1.05}
+    .form-label{font-weight:700;color:var(--text);font-size:.88rem}
+    .form-control,.form-select{border:1px solid #d4e0d8;border-radius:11px;min-height:50px;padding:12px 14px;background:#fbfdfb}
+    .form-control:focus,.form-select:focus{border-color:#73a18b;box-shadow:0 0 0 .2rem #76a58c2b}
+    textarea.form-control{min-height:125px}
+    .form-feedback{min-height:25px;font-size:.9rem;font-weight:600}
+    .contact-aside{padding:20px 10px}
+    .aside-art{display:grid;place-items:center;width:74px;height:74px;border-radius:24px;background:var(--lime);font-size:2rem;color:var(--forest);margin-bottom:24px}
+    .contact-aside h3{font-size:1.3rem;font-weight:700}
+    .contact-aside p{color:var(--sub);line-height:1.75}
+    .contact-aside a{color:var(--forest);font-weight:700}
+    footer{background:var(--forest);color:#d1e0d8;padding:25px 0;font-size:.86rem}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:991px){.portrait{width:34%;right:2%;height:60%;opacity:.8}.hero-copy{padding:60px 6%}.hero-panel{min-height:560px}}
+    @media(max-width:767px){.hero{padding:26px 0 45px}.hero-panel{min-height:650px}.hero-copy{padding:48px 25px}.portrait{height:37%;width:48%;right:0}.portrait-label{bottom:13px;left:6%;font-size:.72rem;padding:10px}.hero-meta{gap:13px;flex-wrap:wrap;margin-top:29px}.hero-buttons{align-items:flex-start;flex-direction:column;gap:15px}.section{padding:58px 0}.contact{padding:58px 0}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+    :root{--forest:#29251f;--mint:#ede9e2;--lime:#b49a70;--cream:#f4f2ee;--text:#28251f;--sub:#716d66;--white:#fff}
+    .topline{display:none}
+    header.container{max-width:none;padding-left:max(calc((100vw - 1280px)/2),24px);padding-right:max(calc((100vw - 1280px)/2),24px);background:#fff}
+    .navbar{min-height:78px}
+    .logo{font-size:1.35rem;color:#171614}
+    .logo span{display:none}
+    .nav-link{color:#5f5b55!important}
+    .nav-link:hover{color:#927950!important}
+    .btn-pill{background:var(--lime);color:#191713}
+    .btn-pill:hover{background:#9e835a;color:white}
+    .hero{padding:0;background:#f0efec}
+    .hero>.container{max-width:none;padding:0}
+    .hero-panel{position:relative;display:block;height:calc(100vh - 78px);height:calc(100svh - 78px);min-height:620px;border-radius:0;overflow:hidden;background:#f0efec;color:var(--text)}
+    .hero-panel:before{display:none}
+    .hero-panel:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(24,20,16,.08) 0%,rgba(24,20,16,.18) 42%,rgba(24,20,16,.72) 100%);pointer-events:none}
+    .hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;width:100%;min-height:100%;padding:clamp(36px,5vw,80px) 7vw clamp(36px,5vw,80px) 52vw;order:2;color:#fff}
+    .kicker{color:#8a714c}
+    .hero-copy .kicker{color:#e2c79b}
+    .hero-copy h1{max-width:600px;font-size:clamp(2.8rem,4vw,3.6rem);line-height:1.1;color:#fff}
+    .hero-copy h1 strong{color:#927950}
+    .hero-copy h1 strong{color:#d6ba8a}
+    .hero-copy p{color:#f1efeb;max-width:510px}
+    .hero-buttons{gap:24px}
+    .hero .reveal{opacity:1;transform:none}
+    .hero-link{color:#fff;border-color:#ffffff80}
+    .hero-meta{display:none}
+    .portrait{position:absolute;inset:0;z-index:0;width:100%;height:100%;min-height:0;max-width:none;flex:none;order:1;border-radius:0;background:#d8d6d0}
+    .portrait img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center}
+    .portrait-label{display:none}
+    .section-kicker{color:#8a714c}
+    .contact{background:#ede9e2}
+    @media(max-width:991px){.hero-panel{min-height:570px}.hero-copy{padding-left:46vw;padding-right:5vw}}
+    @media(max-width:767px){header.container{padding-left:20px;padding-right:20px}.hero{padding:0}.hero-panel{height:auto;min-height:calc(100vh - 78px);min-height:calc(100svh - 78px)}.hero-panel:after{background:linear-gradient(180deg,rgba(24,20,16,.08) 0%,rgba(24,20,16,.22) 25%,rgba(24,20,16,.78) 100%)}.portrait{height:100%;min-height:100%}.portrait img{height:100%;min-height:100%;object-position:center}.hero-copy{min-height:calc(100vh - 78px);min-height:calc(100svh - 78px);justify-content:flex-end;padding:42vh 25px 50px}.hero-copy h1{font-size:clamp(2.8rem,11vw,4rem)}.hero-buttons{align-items:flex-start;flex-direction:column;gap:18px}}
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header class="container">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegación principal">
+      <a class="logo navbar-brand" href="#inicio">Brújula.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="#estudio">El estudio</a></li><li class="nav-item"><a class="nav-link" href="#principios">Cómo ayudamos</a></li><li class="nav-item"><a class="btn btn-pill ms-lg-2" href="#contacto">Pedir una consulta ↗</a></li>
+      </ul></div>
+    </nav>
+  </header>
+  <main id="inicio">
+    <section class="hero"><div class="container"><div class="row g-0 align-items-stretch hero-panel">
+      <div class="col-lg-7 portrait"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=90" alt="Contadora del Estudio Brújula trabajando con su equipo" onerror="this.style.display='none'"></div>
+      <div class="col-lg-5 hero-copy reveal">
+        <span class="kicker">Números claros, decisiones seguras</span>
+        <h1><strong>Tus números,</strong><br>un rumbo claro.</h1>
+        <p>Te ayudamos con impuestos, cierres y decisiones financieras, con una guía clara y un equipo que conoce tu historia.</p>
+        <div class="hero-buttons"><a class="btn btn-pill" href="#contacto">Agenda una consulta ↗</a><a class="hero-link" href="#estudio">Conoce el estudio</a></div>
+      </div>
+    </div></div></section>
+    <section class="section" id="estudio"><div class="container"><div class="row g-5 align-items-start">
+      <div class="col-lg-6 reveal"><span class="section-kicker">El estudio</span><h2 class="section-title">Acompañar es más que presentar formularios.</h2><p class="muted">Estudio Brújula nació para acercar la contabilidad a quienes hacen que las cosas sucedan: profesionales, comercios y empresas en crecimiento. Ponemos orden en la gestión y perspectiva en las decisiones.</p></div>
+      <div class="col-lg-5 offset-lg-1 values" id="principios">
+        <article class="value reveal"><span class="value-num">01 / CLARIDAD</span><h3>Vas a saber qué está pasando</h3><p>Traducimos obligaciones y resultados en información que puedes usar de verdad.</p></article>
+        <article class="value reveal"><span class="value-num">02 / CONTINUIDAD</span><h3>Estamos antes del vencimiento</h3><p>Planificamos contigo y te avisamos con tiempo. La prevención también es parte del servicio.</p></article>
+        <article class="value reveal"><span class="value-num">03 / CONFIANZA</span><h3>Tu contexto importa</h3><p>Cada recomendación parte de tu realidad, tus metas y la etapa de tu actividad.</p></article>
+      </div>
+    </div></div></section>
+    <section class="contact" id="contacto"><div class="container"><div class="contact-card"><div class="row g-5">
+      <div class="col-lg-7"><span class="section-kicker">Una primera charla</span><h2 class="mt-3 mb-3">Cuéntanos qué necesitas.</h2><p class="muted mb-4">Déjanos tus datos y te contactaremos para coordinar una consulta inicial.</p>
+        <form id="contactForm" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6"><label class="form-label" for="name">Nombre y apellido</label><input class="form-control" id="name" name="name" autocomplete="name" required minlength="2" placeholder="Tu nombre"><div class="invalid-feedback">Escribe tu nombre para continuar.</div></div>
+            <div class="col-md-6"><label class="form-label" for="email">Correo electrónico</label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required placeholder="nombre@correo.com"><div class="invalid-feedback">Revisa que el correo tenga un formato válido.</div></div>
+            <div class="col-md-6"><label class="form-label" for="activity">¿A qué te dedicas?</label><select class="form-select" id="activity" name="activity" required><option value="" selected disabled>Selecciona una opción</option><option>Servicios profesionales</option><option>Comercio</option><option>Empresa</option><option>Estoy por comenzar</option><option>Otra actividad</option></select><div class="invalid-feedback">Selecciona una opción.</div></div>
+            <div class="col-md-6"><label class="form-label" for="phone">Teléfono (opcional)</label><input class="form-control" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+00 000 000 0000"></div>
+            <div class="col-12"><label class="form-label" for="message">¿En qué podemos ayudarte?</label><textarea class="form-control" id="message" name="message" required minlength="10" placeholder="Cuéntanos brevemente sobre tu consulta"></textarea><div class="invalid-feedback">Cuéntanos un poco más (al menos 10 caracteres).</div></div>
+            <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center gap-3 mt-4"><button class="btn btn-pill" type="submit">Preparar consulta ↗</button><span id="formFeedback" class="form-feedback" role="status" aria-live="polite"></span></div>
+          </div>
+        </form>
+      </div>
+      <aside class="col-lg-4 offset-lg-1 contact-aside"><div class="aside-art" aria-hidden="true">↗</div><h3>Una respuesta humana</h3><p>Al enviar el formulario se abrirá un correo con tu consulta. También puedes escribirnos directamente:</p><a href="mailto:hola@estudiobrujula.com">hola@estudiobrujula.com</a><p class="mt-4 small">Lunes a viernes · 9:00 a 18:00</p></aside>
+    </div></div></div></section>
+  </main>
+  <footer><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><span>© <span data-year></span> Estudio Brújula · Contabilidad para avanzar</span><span>Atención con cita previa</span></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll("[data-year]").forEach(node => node.textContent = new Date().getFullYear());
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach(node => observer.observe(node));
+    const form = document.querySelector("#contactForm");
+    const feedback = document.querySelector("#formFeedback");
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      form.classList.add("was-validated");
+      if (!form.checkValidity()) {
+        feedback.textContent = "Revisa los campos marcados.";
+        feedback.className = "form-feedback text-danger";
+        form.querySelector(":invalid")?.focus();
+        return;
+      }
+      const data = new FormData(form);
+      const subject = encodeURIComponent("Consulta desde el sitio · " + data.get("name"));
+      const body = encodeURIComponent(
+        "Nombre: " + data.get("name") + "\nCorreo: " + data.get("email") +
+        "\nActividad: " + data.get("activity") + "\nTeléfono: " + (data.get("phone") || "No indicado") +
+        "\n\nConsulta:\n" + data.get("message")
+      );
+      feedback.textContent = "Abriendo tu aplicación de correo…";
+      feedback.className = "form-feedback text-success";
+      window.location.href = "mailto:hola@estudiobrujula.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
